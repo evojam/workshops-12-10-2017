@@ -1,0 +1,37 @@
+{
+  "name": "workshops-12-10-2017",
+  "version": "1.0.0",
+  "description": "Bootstrap for ES6 and npm package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+    "start": "npm run build && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evojam/workshops-12-10-2017.git"
+  },
+  "keywords": [
+    "npm",
+    "package",
+    "es6"
+  ],
+  "author": "Michał Wawryszuk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/evojam/workshops-12-10-2017/issues"
+  },
+  "homepage": "https://github.com/evojam/workshops-12-10-2017#readme",
+  "dependencies": {
+    "commander": "2.11.0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "rimraf": "2.6.2"
+  }
+}
