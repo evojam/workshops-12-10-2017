@@ -1,5 +1,5 @@
 {
-  "name": "market",
+  "name": "market-3423423423423",
   "version": "1.0.0",
   "description": "Bootstrap for ES6 and npm package",
   "main": "index.js",
@@ -9,7 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
-    "start": "npm run build && node dist/index.js"
+    "start": "npm run build && node dist/index.js",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
