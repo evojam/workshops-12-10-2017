@@ -2,7 +2,7 @@
   "name": "market",
   "version": "1.0.0",
   "description": "Bootstrap for ES6 and npm package",
-  "main": "./dist/index.js",
+  "main": "index.js",
   "bin": {
     "market": "./dist/index.js"
   },
@@ -27,14 +27,13 @@
   },
   "homepage": "https://github.com/evojam/workshops-12-10-2017#readme",
   "dependencies": {
-    "commander": "2.11.0",
-    "g": "^2.0.1"
+    "commander": "2.11.0"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-plugin-transform-runtime": "6.23.0",
     "babel-preset-es2015": "6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-0": "6.24.1",
     "babel-runtime": "^6.26.0",
     "rimraf": "2.6.2"
   }
