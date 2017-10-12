@@ -1,1 +1,5 @@
-console.log('Start')
+module.exports = class  {
+  hello() {
+    console.log('hello')
+  }
+}

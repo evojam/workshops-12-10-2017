@@ -1,5 +1,5 @@
 {
-  "name": "workshops-12-10-2017",
+  "name": "market",
   "version": "1.0.0",
   "description": "Bootstrap for ES6 and npm package",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/evojam/workshops-12-10-2017.git"
+    "url": "git+git@github.com:evojam/workshops-12-10-2017.git"
   },
   "keywords": [
     "npm",
