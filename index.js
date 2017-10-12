@@ -9,9 +9,9 @@ class Market {
     console.log('hello')
   }
 
-  getMarketPrice() {
+  getPrice(companySymbol) {
     return new Promise((resolve, reject) => {
-      https.get('https://api.iextrading.com/1.0/stock/aapl/price', (response) => {
+      https.get(`https://api.iextrading.com/1.0/stock/${companySymbol}/price`, (response) => {
         response.setEncoding('utf8')
         response.on('data', resolve)
         response.on('error', reject)
@@ -19,8 +19,14 @@ class Market {
     })
   }
 
-  async logOpeningPrice() {
-    console.log(await this.getMarketPrice())
+  async getPrices(...companies) {
+    return await Promise.all(
+      companies.map(company => this.getPrice(company))
+    )
+  }
+
+  async logOpeningPrices() {
+    console.log(...await this.getPrices('aapl', 'acrx', 'HMNY'))
   }
 }
 

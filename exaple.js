@@ -3,4 +3,4 @@ const https = require('https')
 
 const market = new Market()
 market.hello()
-market.logOpeningPrice()
+market.logOpeningPrices()

@@ -2,6 +2,10 @@
 
 'use strict';
 
+var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
 var _regenerator = require('babel-runtime/regenerator');
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
@@ -37,10 +41,10 @@ var Market = function () {
       console.log('hello');
     }
   }, {
-    key: 'getMarketPrice',
-    value: function getMarketPrice() {
+    key: 'getPrice',
+    value: function getPrice(companySymbol) {
       return new Promise(function (resolve, reject) {
-        https.get('https://api.iextrading.com/1.0/stock/aapl/price', function (response) {
+        https.get('https://api.iextrading.com/1.0/stock/' + companySymbol + '/price', function (response) {
           response.setEncoding('utf8');
           response.on('data', resolve);
           response.on('error', reject);
@@ -48,23 +52,28 @@ var Market = function () {
       });
     }
   }, {
-    key: 'logOpeningPrice',
+    key: 'getPrices',
     value: function () {
       var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+        var _this = this;
+
+        for (var _len = arguments.length, companies = Array(_len), _key = 0; _key < _len; _key++) {
+          companies[_key] = arguments[_key];
+        }
+
         return _regenerator2.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.t0 = console;
-                _context.next = 3;
-                return this.getMarketPrice();
+                _context.next = 2;
+                return Promise.all(companies.map(function (company) {
+                  return _this.getPrice(company);
+                }));
+
+              case 2:
+                return _context.abrupt('return', _context.sent);
 
               case 3:
-                _context.t1 = _context.sent;
-
-                _context.t0.log.call(_context.t0, _context.t1);
-
-              case 5:
               case 'end':
                 return _context.stop();
             }
@@ -72,11 +81,47 @@ var Market = function () {
         }, _callee, this);
       }));
 
-      function logOpeningPrice() {
+      function getPrices() {
         return _ref.apply(this, arguments);
       }
 
-      return logOpeningPrice;
+      return getPrices;
+    }()
+  }, {
+    key: 'logOpeningPrices',
+    value: function () {
+      var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2() {
+        var _console;
+
+        return _regenerator2.default.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.t0 = (_console = console).log;
+                _context2.t1 = _console;
+                _context2.t2 = _toConsumableArray3.default;
+                _context2.next = 5;
+                return this.getPrices('aapl', 'acrx', 'HMNY');
+
+              case 5:
+                _context2.t3 = _context2.sent;
+                _context2.t4 = (0, _context2.t2)(_context2.t3);
+
+                _context2.t0.apply.call(_context2.t0, _context2.t1, _context2.t4);
+
+              case 8:
+              case 'end':
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      function logOpeningPrices() {
+        return _ref2.apply(this, arguments);
+      }
+
+      return logOpeningPrices;
     }()
   }]);
   return Market;

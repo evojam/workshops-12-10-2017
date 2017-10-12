@@ -5,4 +5,4 @@ var https = require('https');
 
 var market = new Market();
 market.hello();
-market.logOpeningPrice();
+market.logOpeningPrices();
