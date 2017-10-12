@@ -2,7 +2,7 @@
   "name": "market",
   "version": "1.0.0",
   "description": "Bootstrap for ES6 and npm package",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "bin": {
     "market": "./dist/index.js"
   },
