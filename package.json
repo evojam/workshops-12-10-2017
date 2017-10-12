@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Bootstrap for ES6 and npm package",
   "main": "index.js",
+  "bin": {
+    "market": "./dist/index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
@@ -24,7 +27,8 @@
   },
   "homepage": "https://github.com/evojam/workshops-12-10-2017#readme",
   "dependencies": {
-    "commander": "2.11.0"
+    "commander": "2.11.0",
+    "g": "^2.0.1"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
